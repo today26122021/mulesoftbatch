@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="254a2b03-873e-4896-8408-2e4d8c629606" >
+		<http:listener-connection host="localhost" port="8085" />
+	</http:listener-config>
+	<flow name="sample_projectFlow" doc:id="64d1848a-39cb-4f49-9ca0-bd6f2eee018e" >
+		<http:listener doc:name="Listener" doc:id="589eaad2-ee0c-42ca-be16-508cf4c40bc7" config-ref="HTTP_Listener_config" path="/samplenew"/>
+		<set-payload value="Weclome Mulesoft" doc:name="Message" doc:id="a5609356-ed9b-4fc9-b745-42d7a7428a5b" />
+	</flow>
+</mule>
